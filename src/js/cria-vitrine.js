@@ -1,6 +1,8 @@
 class CriaVitrine {
 
     static dom(obj) {
+        const {imagem, nome, categoria, descricao, preco, id} = obj
+
         const vitrine     = document.getElementById('vitrine')
 
         const card        = document.createElement('div')
@@ -18,6 +20,7 @@ class CriaVitrine {
         card.classList.add('card')
         infos.classList.add('infos')
         buy.classList.add('buy')
+        button.classList.add('addCart')
 
         vitrine.appendChild(card)
         card.appendChild(figure)
@@ -32,13 +35,15 @@ class CriaVitrine {
         button.appendChild(buyIcon)
 
 
-        img.setAttribute('src', obj.imagem)
-        img.setAttribute('alt', obj.nome)
+        img.setAttribute('src', imagem)
+        img.setAttribute('alt', nome)
 
-        category.innerText = obj.categoria
-        name.innerText = obj.nome
-        description.innerText = obj.descricao
-        price.innerText = `R$ ${obj.preco}`
+        button.setAttribute('data-id', id)
+
+        category.innerText    = categoria
+        name.innerText        = nome
+        description.innerText = descricao
+        price.innerText       = preco
    }
 }
 
