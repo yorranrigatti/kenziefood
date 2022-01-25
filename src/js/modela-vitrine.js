@@ -16,8 +16,9 @@ class VitrineModel {
 
 async function dbVitrine() {
     const dataBase = await getAPI()
-
+    
     dataBase.forEach(element => {
+        const newClass = new VitrineModel(element)
         CriaVitrine.dom(element)  
     });
 

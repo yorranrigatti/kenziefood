@@ -1,5 +1,8 @@
 class CartModel {
     static cartTemplate(obj) {
+
+        const {nome, categoria, preco, imagem} = obj
+
         const carrinho = document.querySelector('#carrinho')
 
         const card        = document.createElement('div')
@@ -18,12 +21,12 @@ class CartModel {
         card.appendChild(price)
         figure.appendChild(img)
 
-        img.setAttribute('src', obj.imagem)
-        img.setAttribute('alt', obj.nome)
+        img.setAttribute('src', imagem)
+        img.setAttribute('alt', nome)
         
-        category.innerText    = obj.categoria
-        name.innerText        = obj.nome
-        price.innerText       = obj.preco
+        category.innerText    = categoria
+        name.innerText        = nome
+        price.innerText       = preco
     }
 
 }
