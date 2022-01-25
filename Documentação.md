@@ -1,0 +1,3 @@
+- Idioma padrão: inglês
+- Uso de aspas: aspas simples
+- Uso de ponto e vírgula: não usar
