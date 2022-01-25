@@ -1,3 +1,5 @@
 - Idioma padrão: inglês
 - Uso de aspas: aspas simples
 - Uso de ponto e vírgula: não usar
+- Separação de features em pastas e arquivos distintos
+- Quando utilizar a função getAPI, criar uma função async
