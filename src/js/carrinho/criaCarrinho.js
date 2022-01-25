@@ -11,7 +11,7 @@ async function addCart(id){
 function interceptButton(evt) {
 
     const buyButton = evt.target
-    if(buyButton.tagName == "BUTTON"){
+    if(buyButton.className == 'addCart'){
         const productId = buyButton.getAttribute('data-id')
         addCart(productId)
     }
