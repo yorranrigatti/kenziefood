@@ -1,6 +1,8 @@
 class CriaVitrine {
 
     static dom(obj) {
+        const {imagem, nome, categoria, descricao, preco} = obj
+
         const vitrine     = document.getElementById('vitrine')
 
         const card        = document.createElement('div')
@@ -32,13 +34,13 @@ class CriaVitrine {
         button.appendChild(buyIcon)
 
 
-        img.setAttribute('src', obj.imagem)
-        img.setAttribute('alt', obj.nome)
+        img.setAttribute('src', imagem)
+        img.setAttribute('alt', nome)
 
-        category.innerText = obj.categoria
-        name.innerText = obj.nome
-        description.innerText = obj.descricao
-        price.innerText = `R$ ${obj.preco}`
+        category.innerText = categoria
+        name.innerText = nome
+        description.innerText = descricao
+        price.innerText = `R$ ${preco}`
    }
 }
 

@@ -18,7 +18,7 @@ async function dbVitrine() {
 
     dataBase.forEach(element => {
         const newClass = new VitrineModel(element)
-        CriaVitrine.dom(element)
+        CriaVitrine.dom(newClass)
     });
 }
 
