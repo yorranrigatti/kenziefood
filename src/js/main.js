@@ -1,3 +1,3 @@
-import { getAPI } from "./getAPI.js";
+import {dbVitrine} from "./modela-vitrine.js"
 
-getAPI()
+dbVitrine()
