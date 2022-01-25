@@ -38,7 +38,7 @@ class CriaVitrine {
         category.innerText = obj.categoria
         name.innerText = obj.nome
         description.innerText = obj.descricao
-        price.innerText = obj.preco
+        price.innerText = `R$ ${obj.preco}`
    }
 }
 
