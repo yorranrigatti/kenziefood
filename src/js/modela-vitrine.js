@@ -1,5 +1,5 @@
 import { getAPI } from "./getAPI.js"
-
+import { CriaVitrine } from "./cria-vitrine.js"
 
 
 class VitrineModel {
@@ -18,6 +18,7 @@ async function dbVitrine() {
 
     dataBase.forEach(element => {
         const newClass = new VitrineModel(element)
+        CriaVitrine.dom(element)
     });
 }
 

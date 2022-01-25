@@ -10,10 +10,6 @@ import { filtrarBebidas } from "./filtros.js"
 import { filtrarPesquisa } from "./filtros.js"
 import { filtrarPesquisaButton } from "./filtros.js"
 
-
-
-
-
 const buttonPanificadora = document.querySelector('.panificadora')
 buttonPanificadora.addEventListener('click', filtrarPanificadora)
 
