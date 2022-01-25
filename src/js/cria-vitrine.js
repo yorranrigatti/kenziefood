@@ -18,6 +18,7 @@ class CriaVitrine {
         card.classList.add('card')
         infos.classList.add('infos')
         buy.classList.add('buy')
+        button.classList.add('addCart')
 
         vitrine.appendChild(card)
         card.appendChild(figure)
@@ -35,10 +36,13 @@ class CriaVitrine {
         img.setAttribute('src', obj.imagem)
         img.setAttribute('alt', obj.nome)
 
-        category.innerText = obj.categoria
-        name.innerText = obj.nome
+        button.setAttribute('data-id', obj.id)
+
+        category.innerText    = obj.categoria
+        name.innerText        = obj.nome
         description.innerText = obj.descricao
-        price.innerText = obj.preco
+        price.innerText       = obj.preco
+        button.innerText      = 'Adicionar ao Carrinho'
    }
 }
 

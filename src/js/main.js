@@ -1,3 +1,3 @@
-import {dbVitrine} from "./modela-vitrine.js"
+import { dbVitrine } from "./modela-vitrine.js"
 
 dbVitrine()
