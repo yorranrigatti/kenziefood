@@ -31,10 +31,10 @@ class CartModel {
         
         category.innerText    = categoria
         name.innerText        = nome
-        price.innerText       = preco
+        price.innerText       = `R$ ${String(preco.toFixed(2)).replace('.', ',')}`
     }
 
-    static quantTotal(obj){
+    static quantTotal(){
 
         const carrinho  = document.querySelector('#carrinho')
 
@@ -45,19 +45,24 @@ class CartModel {
         const spanQuant = document.createElement('span')
         const spanTotal = document.createElement('span')
 
+        spanQuant.classList.add('quantidade')
+        spanTotal.classList.add('total')
         
-        carrinho.appendChild(divQuant)
-        carrinho.appendChild(divTotal)
-        divQuant.appendChild(pQuant)
-        divQuant.appendChild(spanQuant)
-        divTotal.appendChild(pTotal)
-        divTotal.appendChild(spanTotal)
+        
 
-        pQuant.innerText    = 'Quantidade'
-        pTotal.innerText    = 'Total'
-    
-        spanQuant.innerText = cartList.length
-        spanTotal.innerText = 'R$ 0,00'
+        if(cartList.length === 0){
+            carrinho.appendChild(divQuant)
+            carrinho.appendChild(divTotal)
+            divQuant.appendChild(pQuant)
+            divQuant.appendChild(spanQuant)
+            divTotal.appendChild(pTotal)
+            divTotal.appendChild(spanTotal)
+            
+            pQuant.innerText    = 'Quantidade'
+            pTotal.innerText    = 'Total'
+
+            spanTotal.innerHTML = 'R$ 00,00'
+        }
         
     }
 }
