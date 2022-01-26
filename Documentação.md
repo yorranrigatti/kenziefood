@@ -1,4 +1,4 @@
-- Idioma padrão: inglês
+- Idioma padrão: inglês e postuguês
 - Uso de aspas: aspas simples
 - Uso de ponto e vírgula: não usar
 - Separação de features em pastas e arquivos distintos
