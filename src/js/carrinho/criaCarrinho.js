@@ -1,17 +1,18 @@
 import { getAPI } from "../getAPI.js";
 import {CartModel} from './modeloCarrinho.js'
+import {valorTotal} from './funcaoPrecoEQuantidade.js'
 
 
 let cartList = []
 
 async function addCart(id){
     
+    CartModel.quantTotal()
     const product = await getAPI()
     const idFilter = product.find(element => Number(id) === element.id)
     CartModel.cartTemplate(idFilter)
     cartList.push(idFilter.id)
-    CartModel.quantTotal(idFilter)
-    
+    valorTotal(idFilter)
 }
 
 function interceptButton(evt) {
