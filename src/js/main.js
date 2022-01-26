@@ -4,6 +4,7 @@ import { filtrarTodos, filtrarPanificadora, filtrarFrutas, filtrarBebidas, filtr
 
 window.addEventListener('click', interceptButton)
 
+
 dbVitrine()
 
 const buttonTodos = document.querySelector('.todos')
@@ -20,5 +21,3 @@ buttonBebidas.addEventListener('click', filtrarBebidas)
 
 const campoPesquisar = document.querySelector('.campoPesquisaProduto')
 campoPesquisar.addEventListener('input', filtrarPesquisa)
-
-

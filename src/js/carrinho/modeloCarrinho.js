@@ -33,7 +33,7 @@ class CartModel {
 
         img.setAttribute('src', imagem)
         img.setAttribute('alt', nome)
-        removeIcon.setAttribute('src', '../src/assets/trash.png')
+        removeIcon.setAttribute('src', '../src/assets/lixeiras.png')
         
         category.innerText    = categoria
         name.innerText        = nome
