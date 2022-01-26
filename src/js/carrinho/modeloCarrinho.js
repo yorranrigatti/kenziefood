@@ -19,12 +19,12 @@ class CartModel {
         removeProd.classList.add('removeProduct')
 
         carrinho.appendChild(card)
-        card.appendChild(figure)
-        card.appendChild(name)
-        card.appendChild(category)
-        card.appendChild(price)
-        card.appendChild(removeProd)
-        figure.appendChild(img)
+        card    .appendChild(figure)
+        card    .appendChild(name)
+        card    .appendChild(category)
+        card    .appendChild(price)
+        card    .appendChild(removeProd)
+        figure  .appendChild(img)
 
         img.setAttribute('src', imagem)
         img.setAttribute('alt', nome)
