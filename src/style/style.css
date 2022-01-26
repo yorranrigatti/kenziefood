@@ -161,13 +161,12 @@ figure span {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background: #e4f7ef;
+  background: #ffffff00;
   border: none;
 }
 
 .buy button:hover {
   cursor: pointer;
-  border: 1px green solid;
 }
 .buy button:active {
   transform: scale(0.96);

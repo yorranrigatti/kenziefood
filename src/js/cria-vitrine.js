@@ -49,7 +49,7 @@ class CriaVitrine {
         img.setAttribute('src', imagem)
         img.setAttribute('alt', nome)
         button.setAttribute('data-id', id)
-        buyIcon.setAttribute('src', '../src/assets/Text.png')
+        buyIcon.setAttribute('src', '../src/assets/Button Circle.png')
         buyIcon.setAttribute('alt', 'carrinho de compras')
         
         if(categoria == "Frutas") {
