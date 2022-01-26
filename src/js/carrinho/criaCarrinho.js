@@ -6,8 +6,12 @@ import {valorTotal} from './funcaoPrecoEQuantidade.js'
 let cartList = []
 
 async function addCart(id){
-    
+    if (cartList.length == 0) {
+        const cartBody = document.querySelector('.cart-body')
+        cartBody.innerHTML = ''
+    }
     CartModel.quantTotal()
+    
     const product = await getAPI()
     const idFilter = product.find(element => Number(id) === element.id)
     CartModel.cartTemplate(idFilter)
