@@ -4,6 +4,9 @@ body {
   padding: 18px;
   font-family: "Poppins", sans-serif;
 }
+.logo{
+  margin: 0px;
+}
 .logo img{
   width: 123px;
   height: 46px;
