@@ -13,11 +13,14 @@ body {
 .logo figcaption{
   display: none;
 }
+section {
+  overflow-x: auto;
+}
 .pesquisar{
   display: flex;
   align-items: center;
   justify-content:space-between;
-  width: 343px;
+  width: 260px;
   height: 54.04px;
   background-color:#F8F9FA;
   border:1.65434px solid #F8F9FA;
@@ -79,7 +82,6 @@ body {
 }
 .vitrine {
   display: flex;
-  overflow-x: auto;
 }
 .card {
   box-sizing: border-box;
