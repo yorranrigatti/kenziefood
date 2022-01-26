@@ -1,42 +1,77 @@
-import { getAPI } from "./getAPI.js";
+import { getAPI } from './getAPI.js';
+import { CriaVitrine } from './cria-vitrine.js'
 
-const dataBase = await getAPI()
 
 // filtro para botão panificação
 async function filtrarPanificadora() {
-    
+    const vitrine = document.querySelector('#vitrine')
+    vitrine.innerHTML = ''
+    const dataBase = await getAPI()
     const listPanificadora = dataBase.filter((element) => {
         return element.categoria === 'Panificadora'
         
     });
-    
-    console.log(listPanificadora)
+    for(let i = 0; i < listPanificadora.length; i++){
+         CriaVitrine.dom(listPanificadora[i])   
+    }
 }
+
+
 // filtro para botão frutas
 async function filtrarFrutas() {
-    
+    const vitrine = document.querySelector('#vitrine')
+    vitrine.innerHTML = ''
+    const dataBase = await getAPI()
     const listFrutas = dataBase.filter((element) => {
         return element.categoria === 'Frutas'
-        
     });
-    
-    console.log(listFrutas)
+    for(let i = 0; i < listFrutas.length; i++){
+        CriaVitrine.dom(listFrutas[i])  
+   }
 }
 
 // filtro para botão bebidas
 async function filtrarBebidas() {
-    
+    const vitrine = document.querySelector('#vitrine')
+    vitrine.innerHTML = ''
+    const dataBase = await getAPI()
     const listBebidas = dataBase.filter((element) => {
         return element.categoria === 'Bebidas'
-        
     });
-    
-    console.log(listBebidas)
+    for(let i = 0; i < listBebidas.length; i++){
+        CriaVitrine.dom(listBebidas[i])
+        console.log(listBebidas)
+    }
 }
 
 
-// filtro campo de pesquisa
+// filtro campo de pesquisa ---- Não finalizado 
+async function filtrarPesquisa(){
+    const vitrine = document.querySelector('#vitrine')
+    vitrine.innerHTML = ''
+    const produto = document.querySelector('.campoPesquisaProduto')
+    const valor   = produto.value.toLocaleLowerCase()
+    const dataBase = await getAPI()
+    const listPesquisar = dataBase.filter((element) =>{
+        for(let i = 0; i < valor.length; i++ ){
+            for(let j = 0; j < element.categoria.length;j++){
+                if(valor[i]===element.categoria[j].toLocaleLowerCase()){
+                return element.categoria
+                }
+            }
+        }
+    })
+    for(let i = 0; i < listPesquisar.length; i++){
+        CriaVitrine.dom(listPesquisar[i])
+    }
+  
+    
+
+}
 async function filtrarPesquisaButton(){
+    const vitrine = document.querySelector('#vitrine')
+    vitrine.innerHTML = ''
+    const dataBase = await getAPI()
     const produto = document.querySelector('.campoPesquisaProduto')
     const valor   = produto.value.toLocaleLowerCase()
     const listPesquisar = dataBase.filter((element) =>{
@@ -44,24 +79,9 @@ async function filtrarPesquisaButton(){
             return element.categoria
         }
     })
-    console.log(listPesquisar)
-}
-
-
-async function filtrarPesquisa(){
-    const produto = document.querySelector('.campoPesquisaProduto')
-    const valor   = produto.value.toLocaleLowerCase()
-    const listPesquisar = dataBase.filter((element) =>{
-        for(let i = 0; i < valor.length; i++ ){
-            for(let j = 0; j < element.categoria.length;j++){
-                if(element.categoria[j].toLocaleLowerCase() === valor[i]){
-                return element.categoria
-                }
-            }
-        }
-        
-    })
-    console.log(listPesquisar)
+    for(let i = 0; i < listPesquisar.length; i++){
+        CriaVitrine.dom(listPesquisar[i])
+    }
 }
 
 
@@ -70,4 +90,3 @@ export{filtrarPanificadora}
 export{filtrarBebidas}
 export{filtrarPesquisaButton}
 export{filtrarPesquisa}
-
