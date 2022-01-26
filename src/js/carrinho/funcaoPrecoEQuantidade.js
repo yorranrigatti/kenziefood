@@ -1,15 +1,14 @@
-import { cartList } from "./criaCarrinho.js"
-
-function valorTotal(obj) {
+function valorTotal(array) {
     const preco = document.querySelector('.total')
     const quantidade = document.querySelector('.quantidade')
 
-    quantidade.innerHTML = cartList.length
+    quantidade.innerHTML = array.length
 
     const novoValorTot = () => {
-        const valor = preco.textContent.replace(',', '.').split(' ')
-        const novoValor = (Number(valor[1]) + obj.preco).toFixed(2)
-        return `R$ ${String(novoValor).replace('.', ',')}`
+        const newValue = array.reduce((acc, cur) => {
+            return (acc + cur.preco)
+        }, 0)
+        return `R$ ${String(newValue.toFixed(2)).replace('.', ',')}`
     }
 
     preco.innerHTML = novoValorTot()

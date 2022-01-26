@@ -6,6 +6,8 @@ window.addEventListener('click', interceptButton)
 
 dbVitrine()
 
+
+
 const buttonTodos = document.querySelector('.todos')
 buttonTodos.addEventListener('click', filtrarTodos)
 
@@ -20,5 +22,4 @@ buttonBebidas.addEventListener('click', filtrarBebidas)
 
 const campoPesquisar = document.querySelector('.campoPesquisaProduto')
 campoPesquisar.addEventListener('input', filtrarPesquisa)
-
 
