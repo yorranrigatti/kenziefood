@@ -8,6 +8,7 @@ body {
   width: 123px;
   height: 46px;
   margin-left: 17px;
+  border:none
 }
 
 .logo figcaption{
@@ -34,7 +35,12 @@ section {
   border:none;
   height:18px;
   width:155px;
+  text-align: center;
 }
+#btnPesquisar{
+  cursor: pointer;
+}
+
 .pesquisa img{
   width: 44.12px;
   height: 44.12px;
@@ -55,6 +61,10 @@ section {
   text-align: center;
   color: #212529;
   line-height: 17px;
+  cursor: pointer;
+}
+#filtros img{
+  margin: 5px;
 }
 .todos{
   margin-left: 18px;
@@ -103,6 +113,9 @@ figure span {
   line-height: 21.68px;
 }
 .categoryDiv{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   position: relative;
   left: 4%;
   bottom: 15px;
@@ -113,8 +126,9 @@ figure span {
   padding-left: 17px;
 }
 .categoryDiv img{
-  width: 11px;
-  height: 11px;
+  width: 19px;
+  height: 20px;
+  margin-left: -11px;
   margin-right: 10px;
 }
 .infos h2 {
