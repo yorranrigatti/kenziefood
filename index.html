@@ -16,22 +16,33 @@
       </figure>
     <div class="pesquisar">   
       <input type="text" placeholder="Pesquisar por produto" class="campoPesquisaProduto">
-      <img src="./src/assets/Button Circle-pesquisar.png" id='btnPesquisar'alt="Botão de pesquisar">
-  </header>
+      <button class="pesquisa">
+        <img src="./src/assets/Button Circle-pesquisar.png" id='btnPesquisar'alt="Botão de pesquisar">
+      </button>
 
-  <main>
+  </div>
+</header>
+
+<main>
+  <section>
     <div id="filtros">
       <button class="todos">Todos</button>
       <button class="panificadora">Panificadora</button>
       <button class="frutas">Frutas</button>
       <button class="bebidas">Bebidas</button>
     </div>
-    <section id="vitrine" class="">
-
-    </section>
+    <div id="vitrine" class="vitrine"></div>
+  </section>
     <aside id="carrinho" class="">
-      <h2>Carrinho</h2>
-      <div class="cart-body"></div>
+      <div class="cart-header">
+        <img src="../src/assets/cart.png" alt="">
+        <h2>Carrinho</h2>
+      </div>
+      <div class="cart-body">
+        <img src="../src/assets/shopping-bag.png" alt="">
+        <span>Ops!</span>
+        <p>Por enquanto não temos produtos no carrinho</p>
+      </div>
     </aside>
   </main>
 
