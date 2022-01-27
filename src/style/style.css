@@ -275,8 +275,11 @@ figure span {
   cursor: pointer;
 }
 .removeProduct img {
-  width: 10px;
-  height: 12px;
+  position: relative;
+  right: 8px;
+  bottom: 3px;
+  width: 18px;
+  height: 18px;
 }
 .divQuant, .divTotal {
   padding: 10px;
