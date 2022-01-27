@@ -23,6 +23,7 @@ class CriaVitrine {
         infos.classList.add('infos')
         buy.classList.add('buy')
         button.classList.add('addCart')
+        buyIcon.classList.add('addCart')
 
         vitrine.appendChild(card)
         card.appendChild(figure)
@@ -46,6 +47,7 @@ class CriaVitrine {
         img.setAttribute('src', imagem)
         img.setAttribute('alt', nome)
         button.setAttribute('data-id', id)
+        buyIcon.setAttribute('data-id', id)
         buyIcon.setAttribute('src', '../src/assets/Button-Circle-carrinho.png')
         buyIcon.setAttribute('alt', 'carrinho de compras')
         if(categoria == "Frutas") {
