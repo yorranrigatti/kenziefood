@@ -5,7 +5,10 @@ import { filtrarTodos, filtrarPanificadora, filtrarFrutas, filtrarBebidas, filtr
 window.addEventListener('click', interceptButton)
 
 
+
 dbVitrine()
+
+
 
 const buttonTodos = document.querySelector('.todos')
 buttonTodos.addEventListener('click', filtrarTodos)

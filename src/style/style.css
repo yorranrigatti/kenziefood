@@ -164,6 +164,7 @@ figure span {
   background: #e4f7ef;
   border: none;
 }
+
 .buy button:hover {
   cursor: pointer;
   border: 1px green solid;

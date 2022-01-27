@@ -1,22 +1,21 @@
-import { getAPI } from "../getAPI.js";
+import { db } from "../getAPI.js";
 import {CartModel} from './modeloCarrinho.js'
 import {valorTotal} from './funcaoPrecoEQuantidade.js'
 
-
 let cartList = []
 
-async function addCart(id){
+function addCart(id){
     if (cartList.length == 0) {
         const cartBody = document.querySelector('.cart-body')
         cartBody.innerHTML = ''
     }
     CartModel.quantTotal()
     
-    const product = await getAPI()
+    const product = db
     const idFilter = product.find(element => Number(id) === element.id)
-    CartModel.cartTemplate(idFilter)
-    cartList.push(idFilter.id)
-    valorTotal(idFilter)
+    cartList.push(idFilter)
+    CartModel.cartTemplate(cartList)
+    valorTotal(cartList)
 }
 
 function interceptButton(evt) {
