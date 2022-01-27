@@ -13,7 +13,7 @@ function addCart(id){
     
     const product = db
     const idFilter = product.find(element => Number(id) === element.id)
-    cartList.push(idFilter)
+    cartList = [...cartList, idFilter]
     CartModel.cartTemplate(cartList)
     valorTotal(cartList)
 }

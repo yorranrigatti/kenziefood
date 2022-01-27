@@ -4,8 +4,8 @@ class CartModel {
     static cartTemplate (array) {
         
         const carrinho = document.querySelector('.cart-body')
-
         carrinho.innerHTML = ''
+        
 
         array.forEach(element => {
             if (element !== '') {
@@ -43,6 +43,7 @@ class CartModel {
                 category.innerText    = element.categoria
                 name.innerText        = element.nome
                 price.innerText       = `R$ ${String(element.preco.toFixed(2)).replace('.', ',')}`
+
             }
             
         });
@@ -68,7 +69,7 @@ class CartModel {
         spanQuant.classList.add('quantidade')
         spanTotal.classList.add('total')
         
-        if(cartList.length === 0){
+        if (cartList.length === 0) {
             carrinho.appendChild(divQuant)
             carrinho.appendChild(divTotal)
             divQuant.appendChild(pQuant)
@@ -90,8 +91,8 @@ class CartModel {
         const divTotal = document.querySelector('.divTotal')
 
         cartBody.innerHTML = ''
-        divQuant.innerHTML = ''
-        divTotal.innerHTML = ''
+        // divQuant.innerHTML = ''
+        // divTotal.innerHTML = ''
         
         const img = document.createElement('img')
         const span = document.createElement('span')
