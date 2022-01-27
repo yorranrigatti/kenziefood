@@ -1,4 +1,4 @@
-import { cartList } from "./criaCarrinho.js"
+import { cartList, buttonRemove } from "./criaCarrinho.js"
 
 class CartModel {
     static cartTemplate (array) {
@@ -41,6 +41,8 @@ class CartModel {
             name.innerText        = element.nome
             price.innerText       = `R$ ${String(element.preco.toFixed(2)).replace('.', ',')}`
         });
+
+        carrinho.addEventListener('click', buttonRemove(evt));
 
         const {nome, categoria, preco, imagem} = array
     }

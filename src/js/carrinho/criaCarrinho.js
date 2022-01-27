@@ -26,4 +26,10 @@ function interceptButton(evt) {
     }
 }
 
-export {interceptButton, cartList}
+function buttonRemove(evt) {
+    const target = evt.target
+    if (target )
+    cartList.indexOf()
+}
+
+export {interceptButton, buttonRemove, cartList}
