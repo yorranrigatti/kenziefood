@@ -1,12 +1,25 @@
-import { getAPI } from './getAPI.js';
+import { db } from './getAPI.js';
 import { CriaVitrine } from './cria-vitrine.js'
+
+// filtro para botão todos
+function filtrarTodos(){
+    const vitrine = document.querySelector('#vitrine')
+    vitrine.innerHTML = ''
+    const dataBase = db
+    const listTodos = dataBase.filter((element)=>{
+        return element.categoria
+    })
+    for(let i = 0; i < listTodos.length; i++){
+        CriaVitrine.dom(listTodos[i])   
+   }
+}
 
 
 // filtro para botão panificação
-async function filtrarPanificadora() {
+function filtrarPanificadora() {
     const vitrine = document.querySelector('#vitrine')
     vitrine.innerHTML = ''
-    const dataBase = await getAPI()
+    const dataBase = db
     const listPanificadora = dataBase.filter((element) => {
         return element.categoria === 'Panificadora'
         
@@ -16,12 +29,11 @@ async function filtrarPanificadora() {
     }
 }
 
-
-// filtro para botão frutas
-async function filtrarFrutas() {
+// filtro para frutas
+function filtrarFrutas() {
     const vitrine = document.querySelector('#vitrine')
     vitrine.innerHTML = ''
-    const dataBase = await getAPI()
+    const dataBase = db
     const listFrutas = dataBase.filter((element) => {
         return element.categoria === 'Frutas'
     });
@@ -31,62 +43,37 @@ async function filtrarFrutas() {
 }
 
 // filtro para botão bebidas
-async function filtrarBebidas() {
+function filtrarBebidas() {
     const vitrine = document.querySelector('#vitrine')
     vitrine.innerHTML = ''
-    const dataBase = await getAPI()
+    const dataBase = db
     const listBebidas = dataBase.filter((element) => {
         return element.categoria === 'Bebidas'
     });
     for(let i = 0; i < listBebidas.length; i++){
         CriaVitrine.dom(listBebidas[i])
-        console.log(listBebidas)
     }
 }
 
 
-// filtro campo de pesquisa ---- Não finalizado 
-async function filtrarPesquisa(){
+// filtro campo de pesquisa
+    function filtrarPesquisa(){
     const vitrine = document.querySelector('#vitrine')
     vitrine.innerHTML = ''
     const produto = document.querySelector('.campoPesquisaProduto')
-    const valor   = produto.value.toLocaleLowerCase()
-    const dataBase = await getAPI()
-    const listPesquisar = dataBase.filter((element) =>{
-        for(let i = 0; i < valor.length; i++ ){
-            for(let j = 0; j < element.categoria.length;j++){
-                if(valor[i]===element.categoria[j].toLocaleLowerCase()){
-                return element.categoria
-                }
-            }
-        }
-    })
+    const valor   = produto.value.toLowerCase()
+    const dataBase = db
+    const listPesquisar = []
+    dataBase.forEach(element => {
+       const indexValor = element.nome.toLowerCase().indexOf(valor)
+       if(indexValor !== -1){
+           listPesquisar.push(element)
+       }
+    });
     for(let i = 0; i < listPesquisar.length; i++){
-        CriaVitrine.dom(listPesquisar[i])
-    }
-  
-    
-
-}
-async function filtrarPesquisaButton(){
-    const vitrine = document.querySelector('#vitrine')
-    vitrine.innerHTML = ''
-    const dataBase = await getAPI()
-    const produto = document.querySelector('.campoPesquisaProduto')
-    const valor   = produto.value.toLocaleLowerCase()
-    const listPesquisar = dataBase.filter((element) =>{
-        if(element.categoria.toLocaleLowerCase() === valor){
-            return element.categoria
-        }
-    })
-    for(let i = 0; i < listPesquisar.length; i++){
-        CriaVitrine.dom(listPesquisar[i])
+        CriaVitrine.dom(listPesquisar[i]) 
     }
 }
 
+export{filtrarTodos, filtrarPanificadora, filtrarFrutas,filtrarBebidas, filtrarPesquisa}
 
-export{filtrarFrutas}
-export{filtrarPanificadora}
-export{filtrarBebidas}
-export{filtrarPesquisaButton}
-export{filtrarPesquisa}

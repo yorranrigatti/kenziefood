@@ -4,10 +4,14 @@ body {
   padding: 18px;
   font-family: "Poppins", sans-serif;
 }
+.logo{
+  margin: 0px;
+}
 .logo img{
   width: 123px;
   height: 46px;
   margin-left: 17px;
+  border:none
 }
 
 .logo figcaption{
@@ -34,7 +38,12 @@ section {
   border:none;
   height:18px;
   width:155px;
+  text-align: center;
 }
+#btnPesquisar{
+  cursor: pointer;
+}
+
 .pesquisa img{
   width: 44.12px;
   height: 44.12px;
@@ -55,6 +64,10 @@ section {
   text-align: center;
   color: #212529;
   line-height: 17px;
+  cursor: pointer;
+}
+#filtros img{
+  margin: 5px;
 }
 .todos{
   margin-left: 18px;
@@ -103,6 +116,9 @@ figure span {
   line-height: 21.68px;
 }
 .categoryDiv{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   position: relative;
   left: 4%;
   bottom: 15px;
@@ -113,8 +129,9 @@ figure span {
   padding-left: 17px;
 }
 .categoryDiv img{
-  width: 11px;
-  height: 11px;
+  width: 19px;
+  height: 20px;
+  margin-left: -11px;
   margin-right: 10px;
 }
 .infos h2 {
@@ -197,6 +214,73 @@ figure span {
   text-align: center;
   color: #868E96;
   margin-bottom: 100px;
+}
+.cartCard {
+  display: flex;
+  width: 285px;
+  margin: 23px 0 23px 0;
+}
+.cartCard figure {
+  margin: 0;
+}
+.cartCard img {
+  border: none;
+  width: 75px;
+  height: 75px;
+  margin: 0 12px 0px 0;
+}
+.cart-infos {
+  width: 170px;
+}
+.cart-infos h2 {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 3px;
+}
+.cart-infos p {
+  margin: 0 0 8px 0;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 16px;
+  color: #868E96;
+  text-align: start;
+}
+.cart-infos span {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: #212529;
+}
+.removeProduct {
+  width: 15px;
+  height: 15px;
+  border: none;
+  margin-top: 5px;
+}
+.removeProduct:hover {
+  cursor: pointer;
+}
+.removeProduct img {
+  width: 10px;
+  height: 12px;
+}
+.divQuant, .divTotal {
+  padding: 10px;
+  width: 265px;
+  display: flex;
+  justify-content: space-between;
+  background: #F8F9FA;
+}
+.divQuant p, .divTotal p{
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 14px;
+}
+.divQuant span, .divTotal span {
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 14px;
 }
 
 @media (min-width: 480px) {

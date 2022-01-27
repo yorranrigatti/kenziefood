@@ -2,9 +2,8 @@ class CriaVitrine {
 
     static dom(obj) {
         const {imagem, nome, categoria, descricao, preco, id} = obj
-
+        teste2 = false
         const vitrine     = document.getElementById('vitrine')
-
         const card         = document.createElement('div')
         const figure       = document.createElement('figure')
         const img          = document.createElement('img')

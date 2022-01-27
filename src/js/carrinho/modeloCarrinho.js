@@ -10,24 +10,30 @@ class CartModel {
         const card        = document.createElement('div')
         const figure      = document.createElement('figure')
         const img         = document.createElement('img')
-        const category    = document.createElement('span')
+        const infos       = document.createElement('div')
+        const category    = document.createElement('p')
         const name        = document.createElement('h2')
         const price       = document.createElement('span')
         const removeProd  = document.createElement('button')
+        const removeIcon  = document.createElement('img')
 
         card.classList.add('cartCard')
+        infos.classList.add('cart-infos')
         removeProd.classList.add('removeProduct')
 
         carrinho.appendChild(card)
-        card    .appendChild(figure)
-        card    .appendChild(name)
-        card    .appendChild(category)
-        card    .appendChild(price)
-        card    .appendChild(removeProd)
-        figure  .appendChild(img)
+        card.appendChild(figure)
+        card.appendChild(infos)
+        infos.appendChild(name)
+        infos.appendChild(category)
+        infos.appendChild(price)
+        card.appendChild(removeProd)
+        figure.appendChild(img)
+        removeProd.appendChild(removeIcon)
 
         img.setAttribute('src', imagem)
         img.setAttribute('alt', nome)
+        removeIcon.setAttribute('src', '../src/assets/trash.png')
         
         category.innerText    = categoria
         name.innerText        = nome
@@ -45,6 +51,8 @@ class CartModel {
         const spanQuant = document.createElement('span')
         const spanTotal = document.createElement('span')
 
+        divQuant.classList.add('divQuant')
+        divTotal.classList.add('divTotal')
         spanQuant.classList.add('quantidade')
         spanTotal.classList.add('total')
         
