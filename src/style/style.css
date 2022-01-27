@@ -314,7 +314,7 @@ figure span {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 1040px;
+    max-width: 1040px;
   }
   .figure {
     display: flex;
