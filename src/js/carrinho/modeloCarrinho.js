@@ -6,6 +6,7 @@ class CartModel {
         const carrinho = document.querySelector('.cart-body')
 
         carrinho.innerHTML = ''
+
         array.forEach(element => {
             if (element !== '') {
                 const card        = document.createElement('div')
@@ -82,6 +83,31 @@ class CartModel {
         }
         
     }
+
+    static recreateCartDom() {
+        const cartBody = document.querySelector('.cart-body')
+        const divQuant = document.querySelector('.divQuant')
+        const divTotal = document.querySelector('.divTotal')
+
+        cartBody.innerHTML = ''
+        divQuant.innerHTML = ''
+        divTotal.innerHTML = ''
+        
+        const img = document.createElement('img')
+        const span = document.createElement('span')
+        const p = document.createElement('p')
+
+        img.src = '../src/assets/shopping-bag.png'
+        img.alt = 'imagem de um carrinho vazio'
+
+        span.innerText = "Ops!"
+        p.innerText = "Por enquanto não temos produtos no carrinho"
+
+        cartBody.appendChild(img)
+        cartBody.appendChild(span)
+        cartBody.appendChild(p)
+    }
+
 }
 
 export {CartModel}

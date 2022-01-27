@@ -1,9 +1,14 @@
+import { CartModel } from "./modeloCarrinho.js"
+
 function valorTotal(array) {
     const preco = document.querySelector('.total')
     const quantidade = document.querySelector('.quantidade')
 
     // quantidade.innerHTML = array.length
     quantidade.innerHTML = quantTotal(array)
+    if (quantidade.innerHTML == 0) {
+        CartModel.recreateCartDom()
+    }
 
     const novoValorTot = () => {
         let newValue = 0
@@ -12,9 +17,6 @@ function valorTotal(array) {
              newValue += element.preco
             }
         });
-        // const newValue = array.reduce((acc, cur) => {
-        //         return (acc + cur.preco)
-        // }, 0)
         return `R$ ${String(newValue.toFixed(2)).replace('.', ',')}`
     }
 
