@@ -28,8 +28,19 @@ function interceptButton(evt) {
 
 function buttonRemove(evt) {
     const target = evt.target
-    if (target )
-    cartList.indexOf()
+    // const btnRemove = document.querySelector('.removeProduct')
+    if (target.className === 'removeProduct' ) {
+        const prodId = target.getAttribute('prod-id')
+        const obj    = cartList.find(element => {
+            if (element.id == prodId) {
+                return element
+            }
+        })
+        const elementIndex = cartList.indexOf(obj)
+        cartList[elementIndex] = ""
+        CartModel.cartTemplate(cartList)
+        valorTotal(cartList)
+    }
 }
 
 export {interceptButton, buttonRemove, cartList}

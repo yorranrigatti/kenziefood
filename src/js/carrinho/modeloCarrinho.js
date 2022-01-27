@@ -6,43 +6,47 @@ class CartModel {
         const carrinho = document.querySelector('.cart-body')
 
         carrinho.innerHTML = ''
-        
         array.forEach(element => {
+            if (element !== '') {
+                const card        = document.createElement('div')
+                const figure      = document.createElement('figure')
+                const img         = document.createElement('img')
+                const infos       = document.createElement('div')
+                const category    = document.createElement('p')
+                const name        = document.createElement('h2')
+                const price       = document.createElement('span')
+                const removeProd  = document.createElement('button')
+                const removeIcon  = document.createElement('img')
+    
+                card.classList.add('cartCard')
+                infos.classList.add('cart-infos')
+                removeProd.classList.add('removeProduct')
+                removeIcon.classList.add('removeProduct')
+    
+                carrinho.appendChild(card)
+                card.appendChild(figure)
+                card.appendChild(infos)
+                infos.appendChild(name)
+                infos.appendChild(category)
+                infos.appendChild(price)
+                card.appendChild(removeProd)
+                figure.appendChild(img)
+                removeProd.appendChild(removeIcon)
+    
+                img.setAttribute('src', element.imagem)
+                img.setAttribute('alt', element.nome)
+                removeIcon.setAttribute('src', '../src/assets/lixeiras.png')
+                removeProd.setAttribute('prod-id', element.id)
+                removeIcon.setAttribute('prod-id', element.id)
+                
+                category.innerText    = element.categoria
+                name.innerText        = element.nome
+                price.innerText       = `R$ ${String(element.preco.toFixed(2)).replace('.', ',')}`
+            }
             
-            const card        = document.createElement('div')
-            const figure      = document.createElement('figure')
-            const img         = document.createElement('img')
-            const infos       = document.createElement('div')
-            const category    = document.createElement('p')
-            const name        = document.createElement('h2')
-            const price       = document.createElement('span')
-            const removeProd  = document.createElement('button')
-            const removeIcon  = document.createElement('img')
-
-            card.classList.add('cartCard')
-            infos.classList.add('cart-infos')
-            removeProd.classList.add('removeProduct')
-
-            carrinho.appendChild(card)
-            card.appendChild(figure)
-            card.appendChild(infos)
-            infos.appendChild(name)
-            infos.appendChild(category)
-            infos.appendChild(price)
-            card.appendChild(removeProd)
-            figure.appendChild(img)
-            removeProd.appendChild(removeIcon)
-
-            img.setAttribute('src', element.imagem)
-            img.setAttribute('alt', element.nome)
-            removeIcon.setAttribute('src', '../src/assets/lixeiras.png')
-            
-            category.innerText    = element.categoria
-            name.innerText        = element.nome
-            price.innerText       = `R$ ${String(element.preco.toFixed(2)).replace('.', ',')}`
         });
 
-        carrinho.addEventListener('click', buttonRemove(evt));
+        carrinho.addEventListener('click', buttonRemove);
 
         const {nome, categoria, preco, imagem} = array
     }
