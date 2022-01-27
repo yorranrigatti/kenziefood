@@ -19,6 +19,7 @@ function addCart(id){
 }
 
 function interceptButton(evt) {
+    console.log(evt.target)
     const buyButton = evt.target
     if(buyButton.className == 'addCart'){
         const productId = buyButton.getAttribute('data-id')

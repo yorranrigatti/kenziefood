@@ -24,3 +24,4 @@ buttonBebidas.addEventListener('click', filtrarBebidas)
 
 const campoPesquisar = document.querySelector('.campoPesquisaProduto')
 campoPesquisar.addEventListener('input', filtrarPesquisa)
+

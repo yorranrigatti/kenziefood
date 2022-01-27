@@ -157,21 +157,33 @@ figure span {
   line-height: 13px;
   margin-right: 215px;
 }
+
 .buy button {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background: #e4f7ef;
+  background: none;
   border: none;
 }
 
 .buy button:hover {
   cursor: pointer;
-  border: 1px green solid;
+  border: none;
 }
 .buy button:active {
   transform: scale(0.96);
 }
+
+.buy button img{
+  position: relative;
+  right: 6px;
+  bottom: 1px;
+}
+
+.buy button img:hover{
+  transform: scale(1.1);
+}
+
 .cart-header{
   display: flex;
   align-items: center;
