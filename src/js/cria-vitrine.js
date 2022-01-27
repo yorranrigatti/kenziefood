@@ -2,7 +2,7 @@ class CriaVitrine {
 
     static dom(obj) {
         const {imagem, nome, categoria, descricao, preco, id} = obj
-        teste2 = false
+        
         const vitrine     = document.getElementById('vitrine')
         const card         = document.createElement('div')
         const figure       = document.createElement('figure')
@@ -46,7 +46,7 @@ class CriaVitrine {
         img.setAttribute('src', imagem)
         img.setAttribute('alt', nome)
         button.setAttribute('data-id', id)
-        buyIcon.setAttribute('src', '../src/assets/Text.png')
+        buyIcon.setAttribute('src', '../src/assets/Button-Circle-carrinho.png')
         buyIcon.setAttribute('alt', 'carrinho de compras')
         if(categoria == "Frutas") {
             categoryIcon.setAttribute('src', '../src/assets/Icon_fruits.png')

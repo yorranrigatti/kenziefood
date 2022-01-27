@@ -1,43 +1,48 @@
 import { cartList } from "./criaCarrinho.js"
 
 class CartModel {
-    static cartTemplate(obj) {
-
-        const {nome, categoria, preco, imagem} = obj
-
+    static cartTemplate (array) {
+        
         const carrinho = document.querySelector('.cart-body')
 
-        const card        = document.createElement('div')
-        const figure      = document.createElement('figure')
-        const img         = document.createElement('img')
-        const infos       = document.createElement('div')
-        const category    = document.createElement('p')
-        const name        = document.createElement('h2')
-        const price       = document.createElement('span')
-        const removeProd  = document.createElement('button')
-        const removeIcon  = document.createElement('img')
-
-        card.classList.add('cartCard')
-        infos.classList.add('cart-infos')
-        removeProd.classList.add('removeProduct')
-
-        carrinho.appendChild(card)
-        card.appendChild(figure)
-        card.appendChild(infos)
-        infos.appendChild(name)
-        infos.appendChild(category)
-        infos.appendChild(price)
-        card.appendChild(removeProd)
-        figure.appendChild(img)
-        removeProd.appendChild(removeIcon)
-
-        img.setAttribute('src', imagem)
-        img.setAttribute('alt', nome)
-        removeIcon.setAttribute('src', '../src/assets/trash.png')
+        carrinho.innerHTML = ''
         
-        category.innerText    = categoria
-        name.innerText        = nome
-        price.innerText       = `R$ ${String(preco.toFixed(2)).replace('.', ',')}`
+        array.forEach(element => {
+            
+            const card        = document.createElement('div')
+            const figure      = document.createElement('figure')
+            const img         = document.createElement('img')
+            const infos       = document.createElement('div')
+            const category    = document.createElement('p')
+            const name        = document.createElement('h2')
+            const price       = document.createElement('span')
+            const removeProd  = document.createElement('button')
+            const removeIcon  = document.createElement('img')
+
+            card.classList.add('cartCard')
+            infos.classList.add('cart-infos')
+            removeProd.classList.add('removeProduct')
+
+            carrinho.appendChild(card)
+            card.appendChild(figure)
+            card.appendChild(infos)
+            infos.appendChild(name)
+            infos.appendChild(category)
+            infos.appendChild(price)
+            card.appendChild(removeProd)
+            figure.appendChild(img)
+            removeProd.appendChild(removeIcon)
+
+            img.setAttribute('src', element.imagem)
+            img.setAttribute('alt', element.nome)
+            removeIcon.setAttribute('src', '../src/assets/lixeiras.png')
+            
+            category.innerText    = element.categoria
+            name.innerText        = element.nome
+            price.innerText       = `R$ ${String(element.preco.toFixed(2)).replace('.', ',')}`
+        });
+
+        const {nome, categoria, preco, imagem} = array
     }
 
     static quantTotal(){
@@ -56,8 +61,6 @@ class CartModel {
         spanQuant.classList.add('quantidade')
         spanTotal.classList.add('total')
         
-        
-
         if(cartList.length === 0){
             carrinho.appendChild(divQuant)
             carrinho.appendChild(divTotal)
