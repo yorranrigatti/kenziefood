@@ -307,6 +307,9 @@ figure span {
     display: flex;
     justify-content: space-around;
   }
+  section {
+    overflow-x: visible;
+  }
   .vitrine {
     display: flex;
     flex-wrap: wrap;
