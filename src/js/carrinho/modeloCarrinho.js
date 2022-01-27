@@ -36,7 +36,7 @@ class CartModel {
     
                 img.setAttribute('src', element.imagem)
                 img.setAttribute('alt', element.nome)
-                removeIcon.setAttribute('src', '../src/assets/lixeiras.png')
+                removeIcon.setAttribute('src', './src/assets/lixeiras.png')
                 removeProd.setAttribute('prod-id', element.id)
                 removeIcon.setAttribute('prod-id', element.id)
                 
@@ -98,7 +98,7 @@ class CartModel {
         const span = document.createElement('span')
         const p = document.createElement('p')
 
-        img.src = '../src/assets/shopping-bag.png'
+        img.src = './src/assets/shopping-bag.png'
         img.alt = 'imagem de um carrinho vazio'
 
         span.innerText = "Ops!"

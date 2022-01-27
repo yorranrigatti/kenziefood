@@ -48,14 +48,14 @@ class CriaVitrine {
         img.setAttribute('alt', nome)
         button.setAttribute('data-id', id)
         buyIcon.setAttribute('data-id', id)
-        buyIcon.setAttribute('src', '../src/assets/Button-Circle-carrinho.png')
+        buyIcon.setAttribute('src', './src/assets/Button-Circle-carrinho.png')
         buyIcon.setAttribute('alt', 'carrinho de compras')
         if(categoria == "Frutas") {
-            categoryIcon.setAttribute('src', '../src/assets/Icon_fruits.png')
+            categoryIcon.setAttribute('src', './src/assets/Icon_fruits.png')
         } else if(categoria == "Panificadora") {
-            categoryIcon.setAttribute('src', '../src/assets/Icon_bread.png')
+            categoryIcon.setAttribute('src', './src/assets/Icon_bread.png')
         } else if(categoria == "Bebidas") {
-            categoryIcon.setAttribute('src', '../src/assets/Icon_glass_of_wine.png')
+            categoryIcon.setAttribute('src', './src/assets/Icon_glass_of_wine.png')
         }
    }
 }
