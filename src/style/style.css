@@ -273,6 +273,9 @@ figure span {
 }
 .removeProduct:hover {
   cursor: pointer;
+  transform: scale(1.1);
+  border: black transparent 1px;
+  border-radius: 50%;
 }
 .removeProduct img {
   position: relative;
