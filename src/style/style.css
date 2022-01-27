@@ -231,7 +231,7 @@ figure span {
 .cartCard {
   display: flex;
   width: 285px;
-  margin: 23px 0 23px 0;
+  margin: 23px 0 23px 14px;
 }
 .cartCard figure {
   margin: 0;
