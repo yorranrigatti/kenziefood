@@ -6,7 +6,8 @@ function filtrarTodos(){
     const vitrine = document.querySelector('#vitrine')
     vitrine.innerHTML = ''
     const dataBase = db
-    const listTodos = dataBase.filter((element)=>{
+    const listTodos = dataBase.filter((element) => {
+        console.log(element);
         return element.categoria
     })
     for(let i = 0; i < listTodos.length; i++){
